@@ -38,6 +38,17 @@ body {
   margin: 30px 0;
 }
 
+  &.main-p-style {
+    font-size: 18px;
+    line-height: 32px;
+    margin: 0 0 10px;
+  }
+
+  &.heading-p-style {
+    font-size: 22px;
+    line-height: 36px;
+  }
+
 .main-width {
   width: 60%;
   margin: 70px auto;
@@ -46,6 +57,7 @@ body {
 header {
   nav {
     background: rgba(51, 51, 51, 0.8);
+    z-index: 1;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
@@ -84,7 +96,6 @@ header {
 .title-page {
   color: @white-color;
   position: relative;
-  z-index: -1;
   top: 0;
   left: 0;
   background: url("../img/backgrounds/1.jpg");
@@ -128,8 +139,6 @@ header {
         border: 1px solid transparent;
         line-height: 22px;
         outline: none;
-        background-color: rgba(255, 255, 255, 0);
-        transition: backgroung-color 1s easy;
 
         &:hover {
           opacity: 0.7;
@@ -141,6 +150,7 @@ header {
 
         &.transparent-btn {
           border: 1px solid @white-color;
+          background-color: rgba(255, 255, 255, 0);
         }
 
         a {
@@ -153,18 +163,13 @@ header {
 
 .what-we-do-description {
   .main-width();
-  color: @gray-color-h3;
+  color: @gray-color-text;
 
   .divider {
     width: 300px;
     height: 1px;
     background-color: rgba(136, 136, 136, 0.3);
     margin-bottom: 50px;
-  }
-
-  p {
-    font-size: 22px;
-    line-height: 36px;
   }
 
   h2 {
@@ -206,11 +211,6 @@ header {
       h3 {
         .h3-heading();
       }
-
-      p {
-        font-size: 18px;
-        line-height: 32px;
-      }
     }
   }
 }
@@ -245,14 +245,66 @@ header {
 .about {
   color: @gray-color-text;
 
-  .block-1 {
+  .block-1,
+  .block-2 {
     &:extend(.clients .clients-wrapper);
-    img {
-      border-bottom-right-radius: 50%;
-    }
+    .img-wrapper {
+      padding-top: 30px;
+      padding-bottom: 30px;
+       &.left {
+         padding-right: 40px;
+       }
+       &.right {
+         padding-left: 40px;
+       }
+        img {
+          border-bottom-right-radius: 40px;
+        }
+        // .img-container-line {
+        //   position: absolute;
+	      //   width: 180px;
+	      //   height: 1px;
+        //   background: red;
+        //   transform: rotate(-45deg);
+        //   &.line-1 {
+        //     top: 63px;
+        //     left: -27px;
+        //   }
+        // }
+     }
 
-    h3 {
-      .h3-heading();
+    .text-description {
+      padding: 5px 15px 5px 0;
+      ul {
+        li {
+          padding: 5px 0;
+          span{
+            &.list-icon {
+              padding-right: 10px;
+              font-size: 24px;
+              color: @green-color;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+
+      h3 {
+        .h3-heading();
+      }
     }
+  }
+}
+.counter {
+  .bg {
+    // position: relative;
+    // top: 0;
+    // left: 0;
+    background: url("../img/backgrounds/1.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-width: 100%;
+    height: 20vh;
   }
 }
