@@ -22,8 +22,15 @@ module.exports = function(grunt) {
           nospawn: true,
         },
       },
+      livereload: {
+        options: { livereload: true },
+        files: ['css/**/*'],
+      },
     },
   });
-
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-less');
+  grunt.loadNpmTasks('grunt-reload');
   grunt.registerTask('default', ['less', 'watch']);
 };
